@@ -1,35 +1,12 @@
 import { useEffect } from "react"
 import Form from "./Form"
+import Transactions from "./Transactions"
 
 const App = () => {
-
-  useEffect(() => {
-    fetch(`http://localhost:3000/getTransactions?&offset=0`, {
-      method: 'GET'
-    })
-    .then((response: any) => {
-      return response.json()
-    })
-    .then((data: any) => {
-      console.log(data)
-    })
-  }, [])
-
-  useEffect(() => {
-    fetch(`http://localhost:3000/deleteTransaction/9`, {
-      method: 'DELETE'
-    })
-    .then((response: any) => {
-      return response.json()
-    })
-    .then((data: any) => {
-      console.log(data)
-    })
-  }, [])
-
   return (
     <div>
       <Form />
+      <Transactions />
     </div>
   )
 }
