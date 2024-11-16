@@ -18,7 +18,6 @@ const Form = () => {
       [name]: name === 'amount' ? Number(value) : value
     });
   };
-
   
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     try {
@@ -58,13 +57,15 @@ const Form = () => {
         placeholder="time"
         value={transaction.time}
         onChange={handleChange}
-      />
+        required
+        />
       <input
         type="number"
         name="amount"
         placeholder="amount"
         value={transaction.amount}
         onChange={handleChange}
+        required
       />
       <button type="submit" className="submit-btn">Transaction</button>
     </form>
