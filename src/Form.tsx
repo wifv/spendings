@@ -1,4 +1,5 @@
 import { ChangeEvent, useState } from "react";
+import './css/form.css'
 
 export interface Transaction {
   time: string;
@@ -8,7 +9,7 @@ export interface Transaction {
 const Form = () => {
   const [transaction, setTransaction] = useState<Transaction>({
     time: '',
-    amount: 0
+    amount: 1
   });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -65,6 +66,7 @@ const Form = () => {
         placeholder="amount"
         value={transaction.amount}
         onChange={handleChange}
+        min={1}
         required
       />
       <button type="submit" className="submit-btn">Transaction</button>
